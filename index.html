@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paksushi.Saryagash — Онлайн‑меню</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Фиксированная верхняя навигация -->
+  <header class="topbar">
+    <div class="brand">Paksushi.Saryagash</div>
+    <nav class="tabs">
+      <a href="#sets">🍱 Сеты</a>
+      <a href="#sushi">🍣 Суши</a>
+      <a href="#pizza">🍕 Пицца</a>
+      <a href="#snacks">🍗 Закуски</a>
+      <a href="#drinks">🥤 Напитки</a>
+      <a href="#contacts">📍 Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Раздел: Сеты -->
+    <section id="sets" class="section">
+      <h2>🍱 Сеты</h2>
+
+      <!-- Панель поиска и фильтров -->
+      <div class="filter-bar">
+        <div class="search">
+          <span class="icon">🔎</span>
+          <input id="set-search" type="text" placeholder="Поиск по названию или составу…" />
+          <button id="search-clear" class="clear" title="Очистить">✕</button>
+        </div>
+        <div class="chips" id="chips">
+          <button class="chip" data-tag="sushi-heavy">Много суши</button>
+          <button class="chip" data-tag="pizza-heavy">Много пиццы</button>
+          <button class="chip" data-tag="balanced">Сбалансированные</button>
+          <button class="chip" data-tag="spicy">Острые</button>
+        </div>
+      </div>
+
+      <div id="sets-list" class="cards two-col"></div>
+    </section>
+
+    <!-- Раздел: Суши -->
+    <section id="sushi" class="section">
+      <h2>🍣 Суши</h2>
+      <div id="sushi-list" class="cards two-col"></div>
+    </section>
+
+    <!-- Раздел: Пицца -->
+    <section id="pizza" class="section">
+      <h2>🍕 Пицца</h2>
+      <div id="pizza-list" class="cards two-col"></div>
+    </section>
+
+    <!-- Раздел: Закуски -->
+    <section id="snacks" class="section">
+      <h2>🍗 Закуски</h2>
+      <div id="snacks-list" class="cards two-col"></div>
+    </section>
+
+    <!-- Раздел: Напитки -->
+    <section id="drinks" class="section">
+      <h2>🥤 Напитки</h2>
+      <div id="drinks-list" class="cards two-col"></div>
+    </section>
+
+    <!-- Контакты: отдельный контрастный блок -->
+    <section id="contacts" class="section contacts-section">
+      <div class="contacts-card">
+        <h2>📍 Контакты</h2>
+        <div class="contacts">
+          <div class="contact-item"><strong>Адрес:</strong> г. Сарыагаш, ул. Бокейханова 19А (Тугис)</div>
+          <div class="contact-item"><strong>Телефон:</strong> <a href="tel:+77788745750">+7 778 874 5750</a></div>
+          <div class="contact-item"><strong>WhatsApp:</strong> <a target="_blank" href="https://wa.me/77788745750">Написать в WhatsApp</a></div>
+          <div class="contact-item"><strong>Instagram:</strong> <a target="_blank" href="https://www.instagram.com/paksushi_saryagash/">@paksushi_saryagash</a></div>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=%D0%A1%D0%B0%D1%80%D1%8B%D0%B0%D0%B3%D0%B0%D1%88%20%D0%91%D0%BE%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0%2019%D0%90&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Paksushi.Saryagash
+  </footer>
+
+  <!-- Модальное окно деталей блюда -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Закрыть">✕</button>
+      <div class="modal-grid">
+        <img id="m-img" class="m-img" src="" alt="Блюдо" />
+        <div class="m-info">
+          <h3 id="m-title"></h3>
+          <p id="m-desc" class="m-desc"></p>
+          <div class="m-actions">
+            <button id="m-order" class="btn">Заказать в WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
